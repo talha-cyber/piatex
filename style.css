@@ -1,0 +1,171 @@
+/* Apply general styles to the whole page */
+body {
+    font-family: Helvetica, Arial, sans-serif; /* Ensures Helvetica is used */
+    background: linear-gradient(to right, #FFF, #feb78a); /* Gradient from left to right */
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default padding and margin from all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Center content inside the body */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Style the navigation bar */
+nav {
+    position: fixed; /* Sticks to the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    padding: 15px 0;
+    z-index: 1000; /* Ensures it stays above other content */
+}
+
+/* Remove default list styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around; /* Evenly spread elements */
+    padding: 0;
+    margin: 0;
+}
+
+/* Style individual navigation links */
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 200; /* Slimmer font weight */
+    color: black;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+    color: #F28500; /* Orange highlight on hover */
+}
+
+/* Add space so content isn't hidden behind the fixed nav */
+body {
+    padding-top: 60px; /* Adjust this if needed depending on nav height */
+}
+
+/* Style for the intro box */
+.intro-box {
+    background-color: rgba(0, 0, 0, 0.05); /* Light grey transparent */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Adjust padding for all screens */
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    color: black;
+    width: 80%; /* Adjusts dynamically to screen width */
+    max-width: 600px; /* Prevents it from getting too wide */
+    margin: 30px auto; /* Centers it */
+}
+
+/* Features section */
+.features {
+    text-align: center;
+    padding: 50px 10px;
+}
+
+.features h2 {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+/* Features container */
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual feature boxes */
+.feature-box {
+    background-color: rgba(255, 252, 252, 0.758); /* Light grey box */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    flex: 1 1 300px; /* Minimum width of 300px, adjusts dynamically */
+    max-width: 400px;
+    }
+
+/* Feature box text */
+.feature-box h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #333;
+}
+/* Hover effect for feature boxes */
+.feature-box:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Slightly darker light gray */
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* CTA Container */
+.cta-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 15px 30px;
+    border-radius: 30px; /* Rounded corners */
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Hover effect */
+.cta-button:hover {
+    background-color: #333; /* Slightly lighter black */
+    transform: scale(1.05); /* Slight enlargement */
+}
+
+.produkte-page .content {
+    position: absolute; /* Ensures the content is positioned explicitly */
+    top: 80px; /* Aligns it to the top of the page */
+    left: 0; /* Aligns it to the left of the screen */
+    width: 100%; /* Ensures it stretches across the screen */
+    padding: 20px; /* Small padding so text isn’t glued to the edge */
+    margin: 0; /* No auto-centering */
+}
+
+/* Ensure all text inside the content block aligns left */
+.produkte-page .content h1,
+.produkte-page .content p {
+    text-align: left;
+    margin: 0;
+}
