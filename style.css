@@ -176,3 +176,13 @@ nav ul li a:hover {
 .ueber-uns-page strong, .ueber-uns-page b {
     font-weight: 700;
 }
+
+.pdf-wrapper {
+    height: 600px;
+    overflow: auto;
+}
+
+.pdf-wrapper iframe {
+    width: 100%;
+    height: 100%;
+}
