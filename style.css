@@ -178,11 +178,15 @@ nav ul li a:hover {
 }
 
 .pdf-wrapper {
-    height: 600px;
-    overflow: auto;
+    width: 100%;
+    max-width: 1200px; /* or your preferred maximum width */
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .pdf-wrapper iframe {
+    display: block;
     width: 100%;
-    height: 100%;
+    height: 600px;
+    border: none;
 }
