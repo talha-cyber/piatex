@@ -176,3 +176,9 @@ nav ul li a:hover {
 .ueber-uns-page strong, .ueber-uns-page b {
     font-weight: 700;
 }
+
+.pdf-wrapper {
+    max-width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
