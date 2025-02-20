@@ -194,3 +194,10 @@ nav ul li a:hover {
     border: none;
     overflow: auto;
 }
+
+object {
+    display: block;
+    height: 100vh; /* Allow full viewport height */
+    overflow: auto; /* Allow scrolling */
+    margin: 0 auto;
+}
