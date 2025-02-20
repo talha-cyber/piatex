@@ -3,7 +3,7 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     background: linear-gradient(to bottom, #fceed7, #f3d9be);
     margin: 0;
-    padding: 80;
+    padding: 0;
     display: block;
     padding-top: 80px; /* Adjust depending on nav height */
 }
@@ -176,14 +176,9 @@ nav ul li a:hover {
     font-weight: 700;
 }
 
+
 .pdf-wrapper {
     max-width: 100%;
     overflow: auto;
     -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
