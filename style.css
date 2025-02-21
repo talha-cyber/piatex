@@ -1,5 +1,4 @@
-/* Apply general styles to the whole page */
-/* Apply general styles to the whole page */
+
 /* Apply general styles to the whole page */
 html, body {
     height: 100%; /* Ensures the body takes up the full screen */
@@ -122,6 +121,7 @@ nav ul li a:hover {
 
 /* Intro box styling */
 .intro-box {
+    margin: 220px auto 30px auto; /* Top margin, centered horizontally */
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 10px;
     padding: 20px;
@@ -131,7 +131,9 @@ nav ul li a:hover {
     color: black;
     width: 80%;
     max-width: 600px;
-    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Features section */
