@@ -204,7 +204,7 @@ nav ul li a:hover {
     margin-top: 60px; 
 }
 
-.ueber-uns-page p, .ueber-uns-page ul, .ueber-uns-page li, .ueber-uns-page strong, .ueber-uns-page b {
+.ueber-uns-page p, .ueber-uns-page ul:not(nav ul), .ueber-uns-page li:not(nav li), .ueber-uns-page strong, .ueber-uns-page b {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 18px;
     font-weight: 300;
