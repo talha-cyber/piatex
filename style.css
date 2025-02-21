@@ -21,20 +21,27 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
+    background: rgba(255, 255, 255, 0.9);
     padding: 15px 0;
     z-index: 1000;
+    transition: top 0.3s ease-in-out;
 }
 
+/* Flexbox for equal spacing */
 nav ul {
-    list-style: none;
     display: flex;
-    justify-content: space-around;
-    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0 20px;
     margin: 0;
 }
 
+/* Style for navigation items */
 nav ul li {
-    display: inline;
+    flex: 1;
+    text-align: center;
+    position: relative;
 }
 
 nav ul li a {
@@ -43,11 +50,41 @@ nav ul li a {
     font-weight: 200;
     color: black;
     padding: 10px 15px;
-    transition: color 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Underline all navbar items except logo */
+nav ul li a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+/* Remove underline from logo */
+.nav-logo a::after {
+    display: none !important;
 }
 
 nav ul li a:hover {
     color: #F28500;
+}
+
+/* Centered Logo Styling */
+.nav-logo {
+    flex-grow: 0;
+    text-align: center;
+}
+
+.nav-logo img {
+    height: 50px;
+    width: auto;
+    max-width: none;
+
 }
 
 /* Intro box styling */
