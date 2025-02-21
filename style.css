@@ -242,7 +242,7 @@ nav ul li a:hover {
 .pdf-wrapper {
     width: 90%;
     max-width: 1200px;
-    height: 100vh; /* Ensure it doesn't cause extra space */
+    height: calc(100vh - 80px); /* Full screen minus navbar height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -252,8 +252,9 @@ nav ul li a:hover {
 .pdf-wrapper object,
 .pdf-wrapper embed {
     width: 100%;
-    height: 100%;
-    display: block; /* Removes unwanted margins */
+    height: 100%; /* Ensures full height */
+    max-height: calc(100vh - 80px); /* Prevents beige block */
+    display: block;
 }
 
 /* Ensure the footer stays at the bottom */
