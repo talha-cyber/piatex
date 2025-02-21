@@ -230,10 +230,30 @@ nav ul li a:hover {
 }
 
 
+.pdf-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ensure it takes full height */
+    overflow: hidden;
+}
+
 .pdf-wrapper {
-    max-width: 100%;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+    width: 90%;
+    max-width: 1200px;
+    height: 100vh; /* Ensure it doesn't cause extra space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.pdf-wrapper object,
+.pdf-wrapper embed {
+    width: 100%;
+    height: 100%;
+    display: block; /* Removes unwanted margins */
 }
 
 /* Ensure the footer stays at the bottom */
