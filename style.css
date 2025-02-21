@@ -256,6 +256,16 @@ nav ul li a:hover {
     display: block; /* Removes unwanted margins */
 }
 
+.impressum-content {
+    max-width: 800px; /* Ensures content is not too wide */
+    margin: 80px auto; /* Centers it horizontally */
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8; /* Increases space between lines */
+}
+
 /* Ensure the footer stays at the bottom */
 footer {
     text-align: center;
