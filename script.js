@@ -30,3 +30,24 @@ function initializeNavbarScroll() {
         nav.classList.remove("hidden-nav");
     });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const cookiePopup = document.getElementById("cookie-popup");
+    const acceptButton = document.getElementById("accept-cookies");
+    const declineButton = document.getElementById("decline-cookies");
+
+    // Check if the user has already made a choice
+    if (localStorage.getItem("cookieConsent") === "accepted" || localStorage.getItem("cookieConsent") === "declined") {
+        cookiePopup.style.display = "none";
+    }
+
+    acceptButton.addEventListener("click", function() {
+        localStorage.setItem("cookieConsent", "accepted");
+        cookiePopup.style.display = "none";
+    });
+
+    declineButton.addEventListener("click", function() {
+        localStorage.setItem("cookieConsent", "declined");
+        cookiePopup.style.display = "none";
+    });
+});

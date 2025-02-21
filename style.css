@@ -266,6 +266,52 @@ nav ul li a:hover {
     line-height: 1.8; /* Increases space between lines */
 }
 
+.cookie-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 16px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #333;
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+.cookie-popup button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+}
+
+#accept-cookies {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#decline-cookies {
+    background-color: #F28500;
+    color: white;
+}
+
+.cookie-popup button:hover {
+    opacity: 0.8;
+}
+
 /* Ensure the footer stays at the bottom */
 footer {
     text-align: center;
