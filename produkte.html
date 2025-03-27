@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unsere Produkte</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Unsere Produkte - Piatex</title>
+    <meta name="description" content="Entdecken Sie das umfangreiche Produktportfolio von Piatex, Ihrem Textilgroßhändler seit 1980.">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="produkte-page">
+<body>
     <header id="navbar-placeholder"></header>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
-    <main class="content">  <!-- Added content wrapper -->
+    <main class="content">
         <section class="pdf-container">
             <div class="pdf-wrapper">
-                <object data="assets/Basic World_Produktportfolio.pdf" type="application/pdf" width="100%" height="800px">
-                    <embed src="assets/Basic World_Produktportfolio.pdf" type="application/pdf" width="100%" height="800px">
+                <object data="assets/Basic World_Produktportfolio.pdf" type="application/pdf">
+                    <iframe src="assets/Basic World_Produktportfolio.pdf"></iframe>
                     <p>Ihr Browser kann das PDF nicht anzeigen. <a href="assets/Basic World_Produktportfolio.pdf" download>Klicken Sie hier zum Herunterladen</a></p>
                 </object>
             </div>
@@ -27,5 +28,12 @@
             <a href="datenschutz.html">Datenschutz</a>
         </p>
     </footer>
+
+    <div id="cookie-popup" class="cookie-popup">
+        <p>Diese Website verwendet Cookies, um Ihnen das beste Erlebnis zu bieten. Sie können dies akzeptieren oder ablehnen.</p>
+        <button id="accept-cookies">Akzeptieren</button>
+        <button id="decline-cookies">Ablehnen</button>
+    </div>
+    
 </body>
 </html>

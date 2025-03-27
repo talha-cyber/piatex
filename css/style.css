@@ -1,19 +1,39 @@
-
 /* Apply general styles to the whole page */
+:root {
+    --primary-color: #F28500; /* Orange brand color */
+    --secondary-color: #fceed7; /* Light orange/beige */
+    --tertiary-color: #f3d9be; /* Slightly darker beige */
+    --text-color: #333;
+    --light-bg: rgba(255, 255, 255, 0.4);
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --footer-bg: #222;
+    --footer-text: #fff;
+    --btn-primary: #333;
+    --btn-hover: #555;
+}
+
 html, body {
     height: 100%; /* Ensures the body takes up the full screen */
     margin: 0;
     padding: 0;
-    font-family: Helvetica, Arial, sans-serif;
-    background: linear-gradient(to bottom, #fceed7, #f3d9be);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: linear-gradient(to bottom, var(--secondary-color), var(--tertiary-color));
     display: flex;
     flex-direction: column;
+    color: var(--text-color);
 }
 
 /* Ensure content fills the screen */
 .content {
     flex-grow: 1; /* Makes the content area expand to fill available space */
     padding-top: 80px; /* Prevents navbar from overlapping content */
+}
+
+.content-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px 40px;
 }
 
 /* Remove default padding and margin from all elements */
@@ -29,10 +49,11 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--nav-bg);
     padding: 15px 0;
     z-index: 1000;
     transition: top 0.3s ease-in-out;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Flexbox for equal spacing */
@@ -55,22 +76,30 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     font-size: 18px;
-    font-weight: 200;
-    color: black;
+    font-weight: 300;
+    color: var(--text-color);
     padding: 10px 15px;
     position: relative;
+    transition: color 0.3s ease;
 }
 
 /* Underline all navbar items except logo */
 nav ul li a::after {
     content: "";
     display: block;
-    width: 100%;
+    width: 0;
     height: 2px;
-    background-color: black;
+    background-color: var(--primary-color);
     position: absolute;
     bottom: -5px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+/* Show full underline on hover */
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 /* Remove underline from logo */
@@ -79,7 +108,7 @@ nav ul li a::after {
 }
 
 nav ul li a:hover {
-    color: #F28500;
+    color: var(--primary-color);
 }
 
 /* Centered Logo Styling */
@@ -92,6 +121,16 @@ nav ul li a:hover {
     height: 50px;
     width: auto;
     max-width: none;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Class to hide navbar when scrolling down */
+.hidden-nav {
+    top: -80px;
 }
 
 /* Ensure navbar doesn't overlap content */
@@ -99,48 +138,50 @@ nav ul li a:hover {
     padding-top: 80px;
 }
 
-
 /* Intro box styling */
 .intro-box {
     margin: 220px auto 30px auto; /* Top margin, centered horizontally */
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
-    padding: 20px;
+    background-color: var(--light-bg);
+    border-radius: 15px;
+    padding: 30px;
     text-align: center;
     font-size: 40px;
     font-weight: 500;
-    color: black;
+    color: var(--text-color);
     width: 80%;
     max-width: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Features section */
 .features {
     text-align: center;
-    padding: 50px 10px;
+    padding: 50px 20px;
 }
 
 .features h2 {
     font-size: 36px;
     font-weight: 500;
     margin-bottom: 30px;
+    color: var(--text-color);
 }
 
 .features-container {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .feature-box {
-    background-color: rgba(255, 255, 255, 0.4); /* Increased transparency */
-    padding: 20px;
-    border-radius: 10px;
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     flex: 1 1 300px;
     max-width: 400px;
@@ -148,43 +189,47 @@ nav ul li a:hover {
 }
 
 .feature-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .feature-box h3 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: var(--text-color);
 }
 
 .feature-box p {
     font-size: 16px;
     font-weight: 300;
-    color: #333;
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 /* CTA Container */
 .cta-container {
     text-align: center;
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 .cta-button {
     display: inline-block;
-    background-color: black;
+    background-color: var(--btn-primary);
     color: white;
     font-size: 18px;
     font-weight: 500;
     padding: 15px 30px;
     border-radius: 30px;
     text-decoration: none;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button:hover {
-    background-color: #333;
-    transform: scale(1.05);
+    background-color: var(--btn-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Über Uns Page Styling */
@@ -193,8 +238,7 @@ nav ul li a:hover {
     margin: auto;
     padding: 40px 20px;
     text-align: center;
-    background: linear-gradient(to bottom, #fceed7, #f3d9be);
-    color: #333;
+    color: var(--text-color);
 }
 
 .ueber-uns-page h1 {
@@ -202,16 +246,40 @@ nav ul li a:hover {
     font-weight: 500;
     margin-bottom: 60px; /* Increased space between header and body text */
     margin-top: 60px; 
+    color: var(--text-color);
 }
 
-.ueber-uns-page p, .ueber-uns-page ul:not(nav ul), .ueber-uns-page li:not(nav li), .ueber-uns-page strong, .ueber-uns-page b {
-    font-family: Helvetica, Arial, sans-serif;
+.ueber-uns-page h2,
+.policy-section h2 {
+    font-size: 28px;
+    font-weight: 500;
+    margin: 40px 0 20px;
+    color: var(--text-color);
+}
+
+.ueber-uns-page h3,
+.policy-section h3 {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 30px 0 15px;
+    color: var(--text-color);
+}
+
+.ueber-uns-page p, 
+.ueber-uns-page ul:not(nav ul), 
+.ueber-uns-page li:not(nav li), 
+.ueber-uns-page strong, 
+.ueber-uns-page b,
+.policy-section p,
+.policy-section ul,
+.policy-section li {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 18px;
     font-weight: 300;
     line-height: 1.6;
-    text-align: center;
+    text-align: left;
     max-width: 800px;
-    margin: auto;
+    margin: 15px auto;
 }
 
 .ueber-uns-page .about-values ul {
@@ -225,8 +293,28 @@ nav ul li a:hover {
     margin: 10px 0;
 }
 
-.ueber-uns-page strong, .ueber-uns-page b {
+.ueber-uns-page strong, 
+.ueber-uns-page b,
+.policy-section strong,
+.policy-section b {
     font-weight: 700;
+}
+
+/* Policy Section Styling */
+.policy-section {
+    margin-bottom: 40px;
+    background-color: var(--light-bg);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.policy-section ul {
+    padding-left: 30px;
+}
+
+.policy-section li {
+    margin-bottom: 10px;
 }
 
 .pdf-container {
@@ -250,87 +338,155 @@ nav ul li a:hover {
 }
 
 .pdf-wrapper object,
-.pdf-wrapper embed {
+.pdf-wrapper iframe {
     width: 100%;
-    height: 100%;
-    display: block; /* Removes unwanted margins */
+    height: 90vh;
+    border: none;
 }
 
+/* Impressum Styling */
 .impressum-content {
-    max-width: 800px; /* Ensures content is not too wide */
-    margin: 80px auto; /* Centers it horizontally */
-    padding: 20px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 1.8; /* Increases space between lines */
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 100px 20px 50px;
+    line-height: 1.6;
 }
 
+/* Cookie popup */
 .cookie-popup {
     position: fixed;
-    bottom: 20px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.9);
-    padding: 15px 20px;
+    background-color: var(--nav-bg);
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
     text-align: center;
-    font-size: 16px;
-    font-family: Helvetica, Arial, sans-serif;
-    color: #333;
-    width: 80%;
     max-width: 400px;
+    width: 90%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    z-index: 1000;
+    gap: 15px;
+}
+
+.cookie-popup p {
+    margin: 0 0 15px;
+    font-size: 16px;
+    color: var(--text-color);
 }
 
 .cookie-popup button {
-    margin-top: 10px;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
-    font-weight: bold;
-    width: 100%;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 #accept-cookies {
-    background-color: #4CAF50;
+    background-color: var(--primary-color);
     color: white;
 }
 
 #decline-cookies {
-    background-color: #F28500;
-    color: white;
+    background-color: #f5f5f5;
+    color: var(--text-color);
 }
 
 .cookie-popup button:hover {
-    opacity: 0.8;
+    transform: translateY(-2px);
 }
 
-/* Ensure the footer stays at the bottom */
+/* Footer styling */
 footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
     text-align: center;
-    padding: 15px;
+    padding: 20px;
+    margin-top: auto;
     width: 100%;
 }
 
-/* Style for footer links */
 footer a {
+    color: var(--footer-text);
     text-decoration: none;
-    color: black;
-    font-size: 16px;
-    text-align: center;
-    padding: 15px;
-    width: 100%;
-    margin-top: auto;
-    margin-bottom: auto;
+    padding: 0 10px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+footer a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: var(--primary-color);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
 }
 
 footer a:hover {
-    color: #F28500;
+    color: var(--primary-color);
+}
+
+footer a:hover::after {
+    width: 80%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .features-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .feature-box {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .intro-box {
+        font-size: 30px;
+        margin-top: 150px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .nav-logo {
+        flex-basis: 100%;
+        margin-bottom: 15px;
+    }
+    
+    nav ul li {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-box {
+        font-size: 24px;
+        margin-top: 120px;
+    }
+    
+    .ueber-uns-page h1 {
+        font-size: 36px;
+    }
+    
+    .feature-box h3 {
+        font-size: 20px;
+    }
+    
+    nav ul li a {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
 }
