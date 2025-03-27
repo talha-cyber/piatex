@@ -5,8 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(data => {
         document.getElementById("navbar-placeholder").innerHTML = data;
 
-        // Once the navbar is loaded, initialize scroll behavior
+        // Once the navbar is loaded, initialize functionality
         initializeNavbarScroll();
+        initializeHamburgerMenu();
     })
     .catch(error => console.error("Error loading navbar:", error));
 
@@ -31,6 +32,45 @@ function initializeNavbarScroll() {
 
     window.addEventListener("mousemove", () => {
         nav.classList.remove("hidden-nav");
+    });
+}
+
+function initializeHamburgerMenu() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    const overlay = document.querySelector('.menu-overlay');
+    
+    if (!hamburger || !navMenu) return; // Prevent errors if elements aren't found
+    
+    // Toggle menu and overlay when hamburger is clicked
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        if (overlay) overlay.classList.toggle('active');
+        
+        // Prevent body scrolling when menu is open
+        document.body.classList.toggle('menu-open');
+    });
+    
+    // Close menu when overlay is clicked
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
+    }
+    
+    // Close menu when a nav link is clicked
+    const navLinks = document.querySelectorAll('.nav-menu li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
     });
 }
 
