@@ -13,11 +13,13 @@
 
     <main class="content">
         <section class="pdf-container">
+            <h1>Unsere Produkte</h1>
             <div class="pdf-wrapper">
-                <object data="assets/Basic World_Produktportfolio.pdf" type="application/pdf">
-                    <iframe src="assets/Basic World_Produktportfolio.pdf"></iframe>
-                    <p>Ihr Browser kann das PDF nicht anzeigen. <a href="assets/Basic World_Produktportfolio.pdf" download>Klicken Sie hier zum Herunterladen</a></p>
-                </object>
+                <!-- Using iframe directly is more reliable for PDFs -->
+                <iframe src="assets/Basic World_Produktportfolio.pdf" title="Piatex Produktkatalog"></iframe>
+            </div>
+            <div class="pdf-download">
+                <a href="assets/Basic World_Produktportfolio.pdf" download class="cta-button">PDF herunterladen</a>
             </div>
         </section>
     </main>
